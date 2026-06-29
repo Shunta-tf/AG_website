@@ -292,7 +292,10 @@ h1,h2,h3,h4,h5 {
    =========================== */
 .hero {
   position: relative; overflow: hidden;
-  background: var(--accent-deep);
+  background:
+    linear-gradient(180deg, rgba(18,52,84,0.86) 0%, rgba(13,40,68,0.93) 100%),
+    url("../images/hero/classroom.jpg") center/cover no-repeat,
+    var(--accent-deep);
   color: #fff;
   padding: calc(var(--header-height) + 60px) 0 76px;
   min-height: clamp(520px, 68vh, 700px);
@@ -632,6 +635,10 @@ h1,h2,h3,h4,h5 {
 
 /* responsive table wrapper */
 .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* wide banner image (e.g. about intro) */
+.banner-img { aspect-ratio: 21/9; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); margin-top: 2.6rem; box-shadow: var(--shadow); }
+@media (max-width: 768px) { .banner-img { aspect-ratio: 16/9; margin-top: 1.8rem; } }
 
 /* ===========================
    PHOTO PLACEHOLDER (rights-pending slots — §5)
