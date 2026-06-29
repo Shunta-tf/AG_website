@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shunta-tf.github.io/AG_website/sitemap.xml
