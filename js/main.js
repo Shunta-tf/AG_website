@@ -14,7 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
   initNewsFilter();
   initFaq();
   initPops();
+  initPageTop();
 });
+
+/* ---- Floating Page-Top button ---- */
+function initPageTop() {
+  const btn = document.getElementById('pagetop');
+  if (!btn) return;
+  let ticking = false;
+  const apply = () => { btn.classList.toggle('show', window.scrollY > 600); ticking = false; };
+  window.addEventListener('scroll', () => { if (ticking) return; ticking = true; requestAnimationFrame(apply); }, { passive: true });
+  btn.addEventListener('click', () => {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  });
+  apply();
+}
 
 /* ---- Hero Pop Slideshow (auto-rotate like the existing site) ---- */
 function initPops() {
