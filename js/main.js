@@ -13,7 +13,48 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initNewsFilter();
   initFaq();
+  initPops();
 });
+
+/* ---- Hero Pop Slideshow (auto-rotate like the existing site) ---- */
+function initPops() {
+  const frame = document.querySelector('.pop-frame');
+  const dotsWrap = document.querySelector('.pop-dots');
+  if (!frame) return;
+  const slides = [...frame.querySelectorAll('.pop-slide')];
+  if (slides.length < 2) return;
+
+  let i = 0, timer = null;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const dots = slides.map((_, idx) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', (idx + 1) + '枚目を表示');
+    b.addEventListener('click', () => { show(idx); restart(); });
+    if (dotsWrap) dotsWrap.appendChild(b);
+    return b;
+  });
+
+  function show(n) {
+    slides[i].classList.remove('active');
+    dots[i].classList.remove('active');
+    i = (n + slides.length) % slides.length;
+    slides[i].classList.add('active');
+    dots[i].classList.add('active');
+  }
+  const next = () => show(i + 1);
+  const start = () => { if (!reduce && !timer) timer = setInterval(next, 5000); };
+  const stop  = () => { if (timer) { clearInterval(timer); timer = null; } };
+  const restart = () => { stop(); start(); };
+
+  show(0);
+  start();
+  frame.addEventListener('mouseenter', stop);
+  frame.addEventListener('mouseleave', start);
+  frame.addEventListener('focusin', stop);
+  frame.addEventListener('focusout', start);
+}
 
 /* ---- Sticky Header ---- */
 function initHeader() {

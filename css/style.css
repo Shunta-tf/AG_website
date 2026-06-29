@@ -290,12 +290,30 @@ h1,h2,h3,h4,h5 {
 /* ===========================
    HERO (photo-less brand panel)
    =========================== */
+/* ポップ（販促バナー）スライドショー — 既存サイト同様に一定間隔で切替 */
+.hero-pops { background: var(--bg-secondary); padding: calc(var(--header-height) + 34px) 0 56px; border-bottom: 1px solid var(--border); }
+.pop-slider { position: relative; max-width: 1000px; margin: 0 auto; }
+.pop-frame { position: relative; aspect-ratio: 960 / 350; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); background: #fff; }
+.pop-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.7s ease; pointer-events: none; }
+.pop-slide.active { opacity: 1; pointer-events: auto; }
+.pop-slide a, .pop-slide img { display: block; width: 100%; height: 100%; }
+.pop-slide img { object-fit: cover; }
+.pop-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
+.pop-dots button { width: 10px; height: 10px; padding: 0; border: none; border-radius: 50%; background: var(--border-hover); cursor: pointer; transition: var(--t); }
+.pop-dots button:hover { background: var(--accent); }
+.pop-dots button.active { background: var(--accent); transform: scale(1.2); }
+.hero-cta-bar { max-width: 1000px; margin: 1.7rem auto 0; text-align: center; }
+.hero-cta-lead { color: var(--text-secondary); font-size: 0.98rem; margin-bottom: 1rem; }
+.hero-pops .hero-cta { justify-content: center; }
+.hero-facts { max-width: 1000px; margin: 1.6rem auto 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem 1.5rem; border-top: 1px solid var(--border); padding-top: 1.4rem; }
+.hero-facts span { font-size: 0.9rem; color: var(--text-secondary); display: inline-flex; align-items: center; gap: 0.45rem; }
+.hero-facts span::before { content: ''; width: 6px; height: 6px; border-radius: 2px; background: var(--accent); display: inline-block; }
+.hero-facts b { color: var(--accent); font-family: 'Montserrat', sans-serif; font-weight: 800; }
+
+/* (legacy .hero* rules below are unused on the current home hero) */
 .hero {
   position: relative; overflow: hidden;
-  background:
-    linear-gradient(100deg, rgba(9,46,76,0.92) 0%, rgba(11,55,88,0.74) 42%, rgba(13,66,104,0.46) 100%),
-    url("../images/hero/classroom.jpg") center/cover no-repeat,
-    var(--accent-deep);
+  background: var(--accent-deep);
   color: #fff;
   padding: calc(var(--header-height) + 60px) 0 76px;
   min-height: clamp(520px, 68vh, 700px);

@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="images/hero/classroom.jpg">
+  <link rel="preload" as="image" href="images/hero/pop-01.jpg">
   <link rel="stylesheet" href="css/style.css">
 
   <script type="application/ld+json">
@@ -57,7 +57,7 @@
   }
   </script>
 </head>
-<body class="home-page">
+<body>
   <a href="#main" class="skip-link">本文へスキップ</a>
 
   <header class="header">
@@ -101,52 +101,34 @@
   <main id="main">
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero-pops">
       <div class="container">
-        <div class="hero-grid">
-          <div class="hero-copy fade-in">
-            <span class="hero-label">Arthur Gakuin — 長野の個別指導塾</span>
-            <h1 class="hero-title">
-              <span class="line">「わかった」を、</span>
-              <span class="line"><span class="accent-text">「できた」</span>に変える。</span>
-            </h1>
-            <p class="hero-tagline">
-              長野県内5校舎の個別指導塾、アーサー学院。小学生から高校生まで、お子様の目標とペースに合わせた指導で、一つひとつの「わかる」を確かな「できる」へ育てます。
-            </p>
-            <div class="hero-cta">
-              <a href="contact.html" class="btn btn-primary btn-lg">無料体験のお申し込み</a>
-              <a href="contact.html?type=brochure" class="btn btn-ghost btn-lg">資料請求（無料）</a>
-            </div>
-            <div class="hero-tel-block">
-              <span class="htb-label">お電話でのお問い合わせ</span>
-              <a href="tel:0120387119" class="htb-num">0120-387-119</a>
-              <span class="htb-hours">受付時間〔00:00〜00:00 / 要確認〕</span>
-            </div>
+        <div class="pop-slider fade-in">
+          <div class="pop-frame" aria-roledescription="カルーセル" aria-label="お知らせ・キャンペーン">
+            <div class="pop-slide active"><a href="contact.html"><img src="images/hero/pop-01.jpg" alt="今日を変えれば未来が変わる。一人ひとりの「わかった」を「できた」に — アーサー学院" width="960" height="350"></a></div>
+            <div class="pop-slide"><a href="contact.html?type=brochure"><img src="images/hero/pop-02.jpg" alt="夏期講習 生徒募集（小・中・高対象）— アーサー学院" loading="lazy" width="960" height="350"></a></div>
+            <div class="pop-slide"><a href="contact.html"><img src="images/hero/pop-03.jpg" alt="模試 実施中（小中高生・全学年対象）— アーサー学院" loading="lazy" width="960" height="350"></a></div>
+            <div class="pop-slide"><a href="results.html"><img src="images/hero/pop-04.jpg" alt="アーサー学院 合格実績" loading="lazy" width="960" height="350"></a></div>
+            <div class="pop-slide"><a href="courses.html#high"><img src="images/hero/pop-05.jpg" alt="高校生対象 総合型選抜・学校推薦型選抜（公募制）対策" loading="lazy" width="960" height="350"></a></div>
+            <div class="pop-slide"><a href="contact.html"><img src="images/hero/pop-06.jpg" alt="未来を紡ぐ。入塾生募集・無料体験実施中 — アーサー学院" loading="lazy" width="960" height="350"></a></div>
           </div>
-          <aside class="hero-aside fade-in fd2" aria-label="アーサー学院の特徴">
-            <h2>アーサー学院の特徴</h2>
-            <div class="hero-stats">
-              <div class="hero-stat">
-                <div class="hs-val">5<small>校舎</small></div>
-                <div class="hs-lbl">長野県内に展開</div>
-              </div>
-              <div class="hero-stat">
-                <div class="hs-val">小中高</div>
-                <div class="hs-lbl">全学年に対応</div>
-              </div>
-              <div class="hero-stat">
-                <div class="hs-val">個別</div>
-                <div class="hs-lbl">一人ひとりへの指導</div>
-              </div>
-              <div class="hero-stat">
-                <div class="hs-val">四谷<small>大塚NET</small></div>
-                <div class="hs-lbl">提携コースあり</div>
-              </div>
-            </div>
-          </aside>
+          <div class="pop-dots" aria-label="スライド切り替え"></div>
+        </div>
+        <div class="hero-cta-bar fade-in">
+          <p class="hero-cta-lead">長野県内5校舎の個別指導塾。無料体験・資料請求を受け付けています。</p>
+          <div class="hero-cta">
+            <a href="contact.html" class="btn btn-primary btn-lg">無料体験のお申し込み</a>
+            <a href="contact.html?type=brochure" class="btn btn-outline btn-lg">資料請求（無料）</a>
+            <a href="tel:0120387119" class="btn btn-outline btn-lg">お電話 0120-387-119</a>
+          </div>
+        </div>
+        <div class="hero-facts fade-in">
+          <span><b>5</b>校舎（長野県内）</span>
+          <span>小・中・高 全学年対応</span>
+          <span>一人ひとりへの個別指導</span>
+          <span>四谷大塚NET 提携コース</span>
         </div>
       </div>
-      <span class="hero-scroll" aria-hidden="true">Scroll</span>
     </section>
 
     <!-- 選ばれる理由 -->
